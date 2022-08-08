@@ -1,0 +1,213 @@
+@import url('https://fonts.google.com/specimen/Space+Mono');
+$Strongcyan: hsl(172, 67%, 45%);
+$Verydarkcyan: hsl(183, 100%, 15%);
+$Darkgrayishcyan1: hsl(186, 14%, 43%);
+$Darkgrayishcyan2: hsl(184, 14%, 56%);
+$Lightgrayishcyan1: hsl(185, 41%, 84%);
+$Lightgrayishcyan2: hsl(189, 41%, 97%);
+$White: hsl(0, 0%, 100%);
+$SpaceMono :'SpaceMono';
+
+
+*{
+box-sizing: border-box;
+margin:0;
+padding:0;
+
+}
+body{
+    background-color:$Lightgrayishcyan1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding:5rem;
+    min-height: 100vh;
+    font-family: $SpaceMono,sans-serif;
+    h1{
+        color:$Darkgrayishcyan1;
+        letter-spacing: 12px;
+       margin:-4rem 0 4rem  0 ;
+       font-size:1rem;
+       font-weight: 700;
+    }
+    .calculator-container{
+ 
+        background:$White; 
+        padding:1.5rem;
+        border-radius:14px;
+        box-shadow: 0 0 4px rgba(0,0,0,0.5);
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        grid-gap: 2rem;
+        label{
+            display: block;
+            font-size:12px;
+            color:$Darkgrayishcyan1;
+            font-family: $SpaceMono,sans-serif;
+            font-weight: 700;
+            margin-bottom:0.5rem;
+        }
+        form{
+            .submit{
+                width:100%;
+                padding:1rem 0;
+                border-radius: 4px;
+                border:none;
+                background-color: $Strongcyan;
+                color:$White;
+                font-weight: bold;
+                font-size:1rem;
+                cursor:pointer;
+        
+            }
+            .tip-inputs{
+    
+       
+                .tip-group{
+                    margin:1.5rem 0;
+                    .input-group{
+                        width: 100%;
+                        position:relative;
+                        .tip-input{
+                           width: 100%;
+                            padding:0.4rem;
+                            font-size:24px;
+                            padding-left:1.7rem;
+                            border-radius:4px;
+                            margin-top:0.2rem;
+                            background-color:$Lightgrayishcyan2;
+                            border:none;
+                            color:$Verydarkcyan;
+                            text-align: right;
+                            font-family: $SpaceMono,sans-serif;
+                            font-weight: 700;
+                        }
+                        .tip-input:focus{
+                            outline:none;
+                        }
+                        .tip-input::placeholder{
+                            opacity: 0.5;
+                        }
+                        i.fa {
+                            position:absolute;
+                            top:50%;
+                            transform: translateY(-50%);
+                            left:0.9rem;
+                            color:$Darkgrayishcyan1;
+                            font-size: 12px;
+                            opacity: 0.5;
+                        }
+                    }
+                 
+                }
+              
+                .tip-values{
+                 
+                    display: grid;
+                    grid-template-columns: repeat(3,1fr);
+                    .btn{
+                        cursor:pointer;
+                        margin:0.4rem;
+                        font-size:1rem;
+                        padding:0.5rem 0rem;
+                        border:none;
+                        background-color: $Verydarkcyan;
+                        color:$White;
+                        border-radius: 4px;
+                        font-weight: bold;
+                    }
+                    .btn.active{
+                        background-color: $Strongcyan;
+                        color:$Verydarkcyan;
+                    }
+                    .btn-custom{
+                        background:$Lightgrayishcyan2;
+                        color:$Darkgrayishcyan1;
+                    }
+                    input[type='text']{
+                       
+                        width:104px;
+                        cursor:text;
+                        text-align: center;
+                    }
+                 
+                }
+            }
+        }
+        
+        .tip-outputs{
+            
+           background: $Verydarkcyan;
+            
+            
+           padding:2rem;
+           color:#fff;
+           border-radius:14px;
+           
+           
+           
+           .tip-amount ,.total{
+               display: flex;
+               justify-content: space-between;
+               flex-wrap: wrap;
+               margin:2rem 0;
+           }
+           .reset-btn{
+               width:100%;
+               padding:1rem 0;
+               border-radius: 4px;
+               border:none;
+               background-color: $Strongcyan;
+               color:$Verydarkcyan;
+               font-weight: bold;
+               cursor:pointer;
+               margin-top:3rem;
+           }
+           .reset-btn:disabled{
+            background:rgb(27, 110, 103);
+        }
+           #tip-amount ,#total{
+               font-size:30px;
+               font-weight: bold;
+               color:$Strongcyan;
+               
+           }
+        
+           h4{
+            small{
+                opacity: 0.5;
+                font-weight: 300;
+            }
+        }
+        }
+
+    }
+ 
+   
+}
+@media (max-width:830px) {
+    body{
+        padding:0 !important;
+    }
+    h1{margin:0 !important;}
+    .calculator-container{
+        grid-template-columns: repeat(1,1fr) !important ;
+    }
+}
+@media (max-width:480px) {
+    .tip-values{
+                 
+        display: grid;
+        grid-template-columns: repeat(2,1fr) !important;
+    }
+    
+}
+@media (max-width:290px) {
+    .tip-values{
+                 
+        display: grid;
+        grid-template-columns: repeat(1,1fr) !important;
+    }
+    
+}
